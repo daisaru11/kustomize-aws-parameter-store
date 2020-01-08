@@ -5,7 +5,8 @@ API_VERSION = kustomize.daisaru11.dev/v1
 CONFIG_DIR = ${HOME}/.config
 INSTALL_DIR = $(CONFIG_DIR)/kustomize/plugin/$(API_VERSION)/$(KIND_LOWER)
 
-PLUGIN_BIN = ./build/$(KIND).so
+BUILD_DIR = ./build
+PLUGIN_BIN = $(BUILD_DIR)/$(KIND).so
 PLUGIN_SRC = ./$(KIND).go
 
 build: $(PLUGIN_BIN)
@@ -26,6 +27,6 @@ test:
 lint:
 	golangci-lint run
 
-.PHONY: test lint clean
+.PHONY: release test lint clean
 
 .SUFFIXES:
