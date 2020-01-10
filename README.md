@@ -38,3 +38,19 @@ metadata:
   namespace: default
 type: Opaque
 ```
+
+## Install
+
+Use `go get`:
+
+```
+go get -u github.com/daisaru11/kustomize-aws-parameter-store
+cp $(go env GOPATH)/bin/kustomize-aws-parameter-store \
+  ${XDG_CONFIG_HOME:-$HOME/.config}/kustomize/plugin/kustomize.daisaru11.dev/v1/awsparameterstoresecret/AWSParameterStoreSecret
+```
+
+Or run install script:
+
+```
+curl -sL https://raw.githubusercontent.com/daisaru11/kustomize-aws-parameter-store/master/hack/install.sh | bash
+```
