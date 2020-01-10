@@ -44,8 +44,8 @@ jobs:
       - name: Build
         id: build
         run: |
-          OUT_BIN="AWSParameterStoreSecret-$(go env GOOS)-amd64.so"
-          GOARCH=amd64 CGO_ENABLED=1 go build -buildmode plugin -o ./build/${OUT_BIN}
+          OUT_BIN="AWSParameterStoreSecret-$(go env GOOS)-amd64"
+          GOARCH=amd64 CGO_ENABLED=0 go build -o ./build/${OUT_BIN}
 
           echo "::set-output name=binary::${OUT_BIN}"
 

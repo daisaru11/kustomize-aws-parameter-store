@@ -1,1 +1,2 @@
-/build
+/kustomize
+/kustomize-aws-parameter-store
