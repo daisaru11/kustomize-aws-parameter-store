@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/base64"
 	"flag"
 	"fmt"
 	"io/ioutil"
@@ -77,7 +78,7 @@ func main() {
 	}
 
 	for k, v := range params {
-		secret.Data[k] = v
+		secret.Data[k] = base64.StdEncoding.EncodeToString([]byte(v))
 	}
 
 	out, err := yaml.Marshal(secret)
