@@ -28,6 +28,9 @@ test:
 lint:
 	golangci-lint run
 
-.PHONY: test lint clean
+build_image:
+	docker build -t daisaru11/kustomize-aws-parameter-store .
+
+.PHONY: test lint clean build_image
 
 .SUFFIXES:
